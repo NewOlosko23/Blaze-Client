@@ -88,58 +88,58 @@ const AdminContacts = () => {
       />
 
       {/* Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Contacts Management</h1>
-            <p className="text-gray-600 mt-2">Manage customer inquiries and contact submissions</p>
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+          <div className="min-w-0 flex-1">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 truncate">Contacts Management</h1>
+            <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">Manage customer inquiries and contact submissions</p>
           </div>
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-              <Users className="w-6 h-6 text-blue-600" />
+          <div className="flex items-center space-x-3 flex-shrink-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
             </div>
             <div>
-              <p className="text-sm text-gray-500">Total Contacts</p>
-              <p className="text-2xl font-bold text-gray-900">{contacts.length}</p>
+              <p className="text-xs sm:text-sm text-gray-500">Total Contacts</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{contacts.length}</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Search and Filters */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-        <div className="flex flex-col md:flex-row gap-4">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <div className="flex-1">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
+                <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               </div>
               <input
                 type="text"
                 placeholder="Search contacts by name, email, or subject..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="block w-full pl-9 sm:pl-10 pr-3 py-2 sm:py-2.5 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
           </div>
           <div className="flex space-x-2">
-            <button className="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
-              <Filter className="w-4 h-4 mr-2" />
-              Filter
+            <button className="flex items-center px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-50">
+              <Filter className="w-4 h-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Filter</span>
             </button>
-            <button className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700">
-              <Users className="w-4 h-4 mr-2" />
-              Export
+            <button className="flex items-center px-3 sm:px-4 py-2 bg-green-600 text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-green-700">
+              <Users className="w-4 h-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Export</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Contacts List */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200">
-        <div className="p-6 border-b border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-900">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200">
+        <div className="p-4 sm:p-6 border-b border-gray-200">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900">
             All Contacts ({filteredContacts.length})
           </h3>
         </div>
@@ -147,41 +147,41 @@ const AdminContacts = () => {
         <div className="divide-y divide-gray-200">
           {filteredContacts.length > 0 ? (
             filteredContacts.map((contact) => (
-              <div key={contact.id} className="p-6 hover:bg-gray-50 transition-colors duration-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-green-600" />
+              <div key={contact.id} className="p-4 sm:p-6 hover:bg-gray-50 transition-colors duration-200">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center space-x-2">
-                        <h4 className="text-lg font-medium text-gray-900 truncate">
+                      <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+                        <h4 className="text-base sm:text-lg font-medium text-gray-900 truncate">
                           {contact.name || 'Unknown Contact'}
                         </h4>
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(contact.status || 'new')}`}>
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium w-fit ${getStatusColor(contact.status || 'new')}`}>
                           {contact.status || 'new'}
                         </span>
                       </div>
-                      <div className="mt-1 flex items-center space-x-4 text-sm text-gray-500">
+                      <div className="mt-1 flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm text-gray-500">
                         {contact.email && (
                           <div className="flex items-center">
-                            <Mail className="w-4 h-4 mr-1" />
-                            {contact.email}
+                            <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                            <span className="truncate">{contact.email}</span>
                           </div>
                         )}
                         {contact.phone && (
                           <div className="flex items-center">
-                            <Phone className="w-4 h-4 mr-1" />
-                            {contact.phone}
+                            <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                            <span className="truncate">{contact.phone}</span>
                           </div>
                         )}
                         <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {formatDate(contact.timestamp || new Date().toISOString())}
+                          <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                          <span className="truncate">{formatDate(contact.timestamp || new Date().toISOString())}</span>
                         </div>
                       </div>
                       {contact.subject && (
-                        <p className="mt-2 text-sm text-gray-600">
+                        <p className="mt-2 text-xs sm:text-sm text-gray-600">
                           <strong>Subject:</strong> {contact.subject}
                         </p>
                       )}

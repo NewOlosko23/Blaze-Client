@@ -79,164 +79,164 @@ const AdminDashboard = () => {
       />
 
       {/* Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard Overview</h1>
-            <p className="text-gray-600 mt-2">Welcome back! Here's what's happening with your business.</p>
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+          <div className="min-w-0 flex-1">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 truncate">Dashboard Overview</h1>
+            <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">Welcome back! Here's what's happening with your business.</p>
           </div>
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
-              <Flame className="w-6 h-6 text-white" />
+          <div className="flex items-center space-x-3 flex-shrink-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-xl flex items-center justify-center">
+              <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <p className="text-sm text-gray-500">Blaze Briquettes</p>
-              <p className="text-lg font-semibold text-gray-900">Admin Panel</p>
+              <p className="text-xs sm:text-sm text-gray-500">Blaze Briquettes</p>
+              <p className="text-sm sm:text-lg font-semibold text-gray-900">Admin Panel</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {/* Total Contacts */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Total Contacts</p>
-              <p className="text-3xl font-bold text-gray-900">{stats.totalContacts}</p>
-              <p className="text-sm text-green-600 mt-1">+12% from last month</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs sm:text-sm font-medium text-gray-600">Total Contacts</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats.totalContacts}</p>
+              <p className="text-xs sm:text-sm text-green-600 mt-1">+12% from last month</p>
             </div>
-            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-              <Users className="w-6 h-6 text-blue-600" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
             </div>
           </div>
         </div>
 
         {/* Total Orders */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Total Orders</p>
-              <p className="text-3xl font-bold text-gray-900">{stats.totalOrders}</p>
-              <p className="text-sm text-green-600 mt-1">+8% from last month</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs sm:text-sm font-medium text-gray-600">Total Orders</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats.totalOrders}</p>
+              <p className="text-xs sm:text-sm text-green-600 mt-1">+8% from last month</p>
             </div>
-            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-              <ShoppingCart className="w-6 h-6 text-green-600" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
             </div>
           </div>
         </div>
 
         {/* Total Revenue */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Total Revenue</p>
-              <p className="text-3xl font-bold text-gray-900">{formatCurrency(stats.totalRevenue)}</p>
-              <p className="text-sm text-green-600 mt-1">+15% from last month</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs sm:text-sm font-medium text-gray-600">Total Revenue</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 truncate">{formatCurrency(stats.totalRevenue)}</p>
+              <p className="text-xs sm:text-sm text-green-600 mt-1">+15% from last month</p>
             </div>
-            <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-              <DollarSign className="w-6 h-6 text-yellow-600" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <DollarSign className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-600" />
             </div>
           </div>
         </div>
 
         {/* Conversion Rate */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Conversion Rate</p>
-              <p className="text-3xl font-bold text-gray-900">{stats.conversionRate}%</p>
-              <p className="text-sm text-green-600 mt-1">+3% from last month</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs sm:text-sm font-medium text-gray-600">Conversion Rate</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stats.conversionRate}%</p>
+              <p className="text-xs sm:text-sm text-green-600 mt-1">+3% from last month</p>
             </div>
-            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-purple-600" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Recent Contacts */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200">
-          <div className="p-6 border-b border-gray-200">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200">
+          <div className="p-4 sm:p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900">Recent Contacts</h3>
-              <Link to="/admin/contacts" className="text-green-600 hover:text-green-700 text-sm font-medium">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">Recent Contacts</h3>
+              <Link to="/admin/contacts" className="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium">
                 View all
               </Link>
             </div>
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {recentContacts.length > 0 ? (
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {recentContacts.map((contact, index) => (
-                  <div key={index} className="flex items-center space-x-4 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <Users className="w-5 h-5 text-green-600" />
+                  <div key={index} className="flex items-center space-x-3 sm:space-x-4 p-2 sm:p-3 bg-gray-50 rounded-lg">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-900 truncate">
+                      <p className="text-xs sm:text-sm font-medium text-gray-900 truncate">
                         {contact.name || 'Unknown Contact'}
                       </p>
-                      <p className="text-sm text-gray-500 truncate">
+                      <p className="text-xs sm:text-sm text-gray-500 truncate">
                         {contact.email || contact.phone || 'No contact info'}
                       </p>
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-500 flex-shrink-0">
                       {formatDate(contact.timestamp || new Date().toISOString())}
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-8">
-                <Users className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">No recent contacts</p>
-                <p className="text-sm text-gray-400">Contacts will appear here when submitted</p>
+              <div className="text-center py-6 sm:py-8">
+                <Users className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-3 sm:mb-4" />
+                <p className="text-sm sm:text-base text-gray-500">No recent contacts</p>
+                <p className="text-xs sm:text-sm text-gray-400">Contacts will appear here when submitted</p>
               </div>
             )}
           </div>
         </div>
 
         {/* Recent Orders */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200">
-          <div className="p-6 border-b border-gray-200">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200">
+          <div className="p-4 sm:p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900">Recent Orders</h3>
-              <Link to="/admin/orders" className="text-green-600 hover:text-green-700 text-sm font-medium">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900">Recent Orders</h3>
+              <Link to="/admin/orders" className="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium">
                 View all
               </Link>
             </div>
           </div>
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {recentOrders.length > 0 ? (
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {recentOrders.map((order, index) => (
-                  <div key={index} className="flex items-center space-x-4 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                      <ShoppingCart className="w-5 h-5 text-blue-600" />
+                  <div key={index} className="flex items-center space-x-3 sm:space-x-4 p-2 sm:p-3 bg-gray-50 rounded-lg">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-900 truncate">
+                      <p className="text-xs sm:text-sm font-medium text-gray-900 truncate">
                         {order.customerName || 'Unknown Customer'}
                       </p>
-                      <p className="text-sm text-gray-500 truncate">
+                      <p className="text-xs sm:text-sm text-gray-500 truncate">
                         {order.quantity}kg - {formatCurrency(order.total || 0)}
                       </p>
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-500 flex-shrink-0">
                       {formatDate(order.timestamp || new Date().toISOString())}
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-8">
-                <ShoppingCart className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500">No recent orders</p>
-                <p className="text-sm text-gray-400">Orders will appear here when placed</p>
+              <div className="text-center py-6 sm:py-8">
+                <ShoppingCart className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-3 sm:mb-4" />
+                <p className="text-sm sm:text-base text-gray-500">No recent orders</p>
+                <p className="text-xs sm:text-sm text-gray-400">Orders will appear here when placed</p>
               </div>
             )}
           </div>
@@ -244,9 +244,9 @@ const AdminDashboard = () => {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
+        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Quick Actions</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <Link
             to="/admin/contacts"
             className="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200"

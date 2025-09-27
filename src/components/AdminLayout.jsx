@@ -41,22 +41,22 @@ const AdminLayout = ({ children }) => {
       {/* Mobile sidebar */}
       <div className={`fixed inset-0 z-50 lg:hidden ${sidebarOpen ? 'block' : 'hidden'}`}>
         <div className="fixed inset-0 bg-black bg-opacity-25" onClick={() => setSidebarOpen(false)}></div>
-        <div className="fixed inset-y-0 left-0 w-64 bg-gray-900 shadow-xl">
+        <div className="fixed inset-y-0 left-0 w-64 sm:w-72 bg-gray-900 shadow-xl">
           <div className="flex items-center justify-between h-16 px-4 border-b border-gray-700">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
                 <Flame className="w-5 h-5 text-white" />
               </div>
-              <span className="text-white font-bold">Blaze Admin</span>
+              <span className="text-white font-bold text-sm sm:text-base">Blaze Admin</span>
             </div>
             <button
               onClick={() => setSidebarOpen(false)}
-              className="text-gray-400 hover:text-white"
+              className="text-gray-400 hover:text-white p-1"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
-          <nav className="mt-4">
+          <nav className="mt-4 overflow-y-auto">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -68,8 +68,8 @@ const AdminLayout = ({ children }) => {
                 }`}
                 onClick={() => setSidebarOpen(false)}
               >
-                <item.icon className="w-5 h-5 mr-3" />
-                {item.name}
+                <item.icon className="w-5 h-5 mr-3 flex-shrink-0" />
+                <span className="truncate">{item.name}</span>
               </Link>
             ))}
           </nav>
@@ -137,48 +137,52 @@ const AdminLayout = ({ children }) => {
       <div className="lg:pl-64">
         {/* Top bar */}
         <div className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
-          <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center">
+          <div className="flex items-center justify-between h-16 px-3 sm:px-4 lg:px-8">
+            <div className="flex items-center min-w-0 flex-1">
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="lg:hidden text-gray-500 hover:text-gray-700"
+                className="lg:hidden text-gray-500 hover:text-gray-700 p-1"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5" />
               </button>
-              <h1 className="ml-4 lg:ml-0 text-2xl font-semibold text-gray-900">
+              <h1 className="ml-2 lg:ml-0 text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 truncate">
                 {navigation.find(item => item.current)?.name || 'Dashboard'}
               </h1>
             </div>
 
-            <div className="flex items-center space-x-4">
-              {/* Search */}
-              <div className="hidden md:block">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              {/* Search - Hidden on very small screens */}
+              <div className="hidden sm:block">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Search className="h-5 w-5 text-gray-400" />
+                    <Search className="h-4 w-4 text-gray-400" />
                   </div>
                   <input
                     type="text"
                     placeholder="Search..."
-                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="block w-32 sm:w-40 lg:w-48 pl-8 pr-3 py-1.5 border border-gray-300 rounded-lg text-xs sm:text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
               </div>
 
               {/* Notifications */}
-              <button className="relative p-2 text-gray-500 hover:text-gray-700">
-                <Bell className="w-6 h-6" />
+              <button className="relative p-1.5 sm:p-2 text-gray-500 hover:text-gray-700">
+                <Bell className="w-5 h-5 sm:w-6 sm:h-6" />
                 <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-400"></span>
               </button>
 
               {/* User menu */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 <div className="hidden sm:block text-right">
-                  <p className="text-sm font-medium text-gray-900">{user?.name || 'Admin'}</p>
-                  <p className="text-xs text-gray-500">{user?.role || 'Administrator'}</p>
+                  <p className="text-xs sm:text-sm font-medium text-gray-900 truncate max-w-24 lg:max-w-none">
+                    {user?.name || 'Admin'}
+                  </p>
+                  <p className="text-xs text-gray-500 hidden lg:block">
+                    {user?.role || 'Administrator'}
+                  </p>
                 </div>
-                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-xs sm:text-sm font-bold">
                     {user?.name?.charAt(0) || 'A'}
                   </span>
                 </div>
@@ -189,8 +193,8 @@ const AdminLayout = ({ children }) => {
 
         {/* Page content */}
         <main className="flex-1">
-          <div className="py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-3 sm:py-6">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
               {children}
             </div>
           </div>
