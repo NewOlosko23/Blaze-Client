@@ -133,7 +133,7 @@ const CookieBanner = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={handleAcceptAll}
-                    className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center"
+                    className="flex-1 bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors duration-200 flex items-center justify-center"
                   >
                     <CheckCircle className="w-5 h-5 mr-2" />
                     Accept All
@@ -232,7 +232,7 @@ const CookieBanner = () => {
                 <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-600">
                   <button
                     onClick={handleSavePreferences}
-                    className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
+                    className="flex-1 bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors duration-200"
                   >
                     Save Preferences
                   </button>

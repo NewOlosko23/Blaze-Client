@@ -1,34 +1,47 @@
-import { useState } from 'react';
-import { Flame, Truck, CheckCircle, Star, Phone, Mail, MapPin, ArrowRight, Users, Package, CreditCard, Shield } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import BackToTop from '../components/BackToTop';
-import SEO from '../components/SEO';
-import { localBusinessSchema, breadcrumbSchema } from '../data/structuredData';
+import { useState } from "react";
+import {
+  Flame,
+  Truck,
+  CheckCircle,
+  Star,
+  Phone,
+  Mail,
+  MapPin,
+  ArrowRight,
+  Users,
+  Package,
+  CreditCard,
+  Shield,
+} from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import BackToTop from "../components/BackToTop";
+import SEO from "../components/SEO";
+import { localBusinessSchema, breadcrumbSchema } from "../data/structuredData";
 
 const Order = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    quantity: '1',
-    deliveryType: 'standard',
-    paymentMethod: 'cash'
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    quantity: "1",
+    deliveryType: "standard",
+    paymentMethod: "cash",
   });
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Create order record
     const order = {
       id: Date.now(),
@@ -43,34 +56,36 @@ const Order = () => {
       notes: formData.notes,
       total: formData.quantity * 200, // KSh 200 per kg
       timestamp: new Date().toISOString(),
-      status: 'pending'
+      status: "pending",
     };
-    
+
     // Save to localStorage for admin
-    const existingOrders = JSON.parse(localStorage.getItem('admin_orders') || '[]');
+    const existingOrders = JSON.parse(
+      localStorage.getItem("admin_orders") || "[]"
+    );
     existingOrders.push(order);
-    localStorage.setItem('admin_orders', JSON.stringify(existingOrders));
-    
-    console.log('Order submitted:', order);
-    alert('Order submitted successfully! We will contact you soon.');
-    
+    localStorage.setItem("admin_orders", JSON.stringify(existingOrders));
+
+    console.log("Order submitted:", order);
+    alert("Order submitted successfully! We will contact you soon.");
+
     // Reset form
     setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
       quantity: 1,
-      deliveryType: 'standard',
-      paymentMethod: 'mpesa',
-      notes: ''
+      deliveryType: "standard",
+      paymentMethod: "mpesa",
+      notes: "",
     });
   };
 
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
-      <SEO 
+      <SEO
         title="Order Premium Charcoal Briquettes Online - Blaze Briquettes Homabay, Kenya"
         description="Order premium charcoal briquettes online from Blaze Briquettes in Homabay, Kenya. Fast delivery, eco-friendly fuel. Order now from KSh 200/kg with countrywide delivery!"
         keywords="order charcoal briquettes Kenya, buy charcoal online Homabay, charcoal delivery Kenya, order fuel Nyanza, charcoal briquettes purchase, eco-friendly fuel order"
@@ -78,14 +93,17 @@ const Order = () => {
         structuredData={[localBusinessSchema, breadcrumbSchema]}
       />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative py-16 bg-gradient-to-br from-gray-900 to-black">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-green-600 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-green-600 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
           <div className="text-center">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-green-600 to-green-800 text-white text-sm font-bold mb-6 shadow-lg">
@@ -93,13 +111,13 @@ const Order = () => {
               Place Your Order
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-              Order{' '}
+              Order{" "}
               <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
                 Premium Briquettes
               </span>
             </h1>
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
-              Get your premium charcoal briquettes delivered anywhere in Kenya. 
+              Get your premium charcoal briquettes delivered anywhere in Kenya.
               Fast, reliable, and eco-friendly.
             </p>
           </div>
@@ -112,22 +130,29 @@ const Order = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-green-600 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+            <div
+              className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-green-600 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "2s" }}
+            ></div>
           </div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Order Form */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-700">
-              <h2 className="text-3xl font-bold text-white mb-6">Order Details</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Order Details
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">First Name *</label>
-                    <input 
-                      type="text" 
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
@@ -137,9 +162,11 @@ const Order = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Last Name *</label>
-                    <input 
-                      type="text" 
+                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
@@ -151,9 +178,11 @@ const Order = () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">Email *</label>
-                  <input 
-                    type="email" 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
@@ -164,9 +193,11 @@ const Order = () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">Phone Number *</label>
-                  <input 
-                    type="tel" 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
@@ -178,8 +209,10 @@ const Order = () => {
 
                 {/* Address Information */}
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">Delivery Address *</label>
-                  <textarea 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Delivery Address *
+                  </label>
+                  <textarea
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
@@ -191,9 +224,11 @@ const Order = () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">City *</label>
-                  <input 
-                    type="text" 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    City *
+                  </label>
+                  <input
+                    type="text"
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
@@ -205,8 +240,10 @@ const Order = () => {
 
                 {/* Product Selection */}
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">Quantity *</label>
-                  <select 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Quantity *
+                  </label>
+                  <select
                     name="quantity"
                     value={formData.quantity}
                     onChange={handleInputChange}
@@ -220,21 +257,29 @@ const Order = () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">Delivery Type</label>
-                  <select 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Delivery Type
+                  </label>
+                  <select
                     name="deliveryType"
                     value={formData.deliveryType}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
-                    <option value="standard">Standard Delivery (3-5 days)</option>
-                    <option value="express">Express Delivery (1-2 days) - +KSh 200</option>
+                    <option value="standard">
+                      Standard Delivery (3-5 days)
+                    </option>
+                    <option value="express">
+                      Express Delivery (1-2 days) - +KSh 200
+                    </option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">Payment Method</label>
-                  <select 
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Payment Method
+                  </label>
+                  <select
                     name="paymentMethod"
                     value={formData.paymentMethod}
                     onChange={handleInputChange}
@@ -246,7 +291,7 @@ const Order = () => {
                   </select>
                 </div>
 
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-green-600 text-white py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl"
                 >
@@ -260,30 +305,55 @@ const Order = () => {
             <div className="space-y-8">
               {/* Order Summary */}
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-700">
-                <h3 className="text-2xl font-bold text-white mb-6">Order Summary</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Order Summary
+                </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-gray-700">
                     <span className="text-gray-300">Premium Briquettes</span>
-                    <span className="text-white font-semibold">1kg</span>
+                    <span className="text-white font-semibold">10 kg</span>
                   </div>
+
                   <div className="flex justify-between items-center py-3 border-b border-gray-700">
                     <span className="text-gray-300">Unit Price</span>
-                    <span className="text-white font-semibold">KSh 200</span>
+                    <span className="text-white font-semibold">
+                      KSh 25 / kg
+                    </span>
                   </div>
+
+                  <div className="flex justify-between items-center py-3 border-b border-gray-700">
+                    <span className="text-gray-300">Subtotal</span>
+                    <span className="text-white font-semibold">KSh 250</span>
+                  </div>
+
                   <div className="flex justify-between items-center py-3 border-b border-gray-700">
                     <span className="text-gray-300">Delivery</span>
-                    <span className="text-green-400 font-semibold">From KSh 300</span>
+                    <span className="text-green-400 font-semibold">
+                      From KSh 300
+                    </span>
                   </div>
+
                   <div className="flex justify-between items-center py-4 text-xl font-bold">
-                    <span className="text-white">Total</span>
-                    <span className="text-green-400">KSh 200</span>
+                    <span className="text-white">Total (approx.)</span>
+                    <span className="text-green-400">KSh 550</span>
                   </div>
+                </div>
+
+                <div className="mt-6 text-sm text-gray-400">
+                  <p>* Prices decrease with larger orders:</p>
+                  <ul className="list-disc list-inside mt-2">
+                    <li>1 – 9 kg: KSh 30 / kg</li>
+                    <li>10 – 49 kg: KSh 25 / kg</li>
+                    <li>50 kg +: KSh 20 / kg</li>
+                  </ul>
                 </div>
               </div>
 
               {/* Contact Info */}
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-700">
-                <h3 className="text-2xl font-bold text-white mb-6">Need Help?</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Need Help?
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 p-3 bg-gray-900 rounded-lg">
                     <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
@@ -291,7 +361,9 @@ const Order = () => {
                     </div>
                     <div>
                       <div className="text-white font-semibold">Call Us</div>
-                      <div className="text-gray-300 text-sm">+254 715 607 720</div>
+                      <div className="text-gray-300 text-sm">
+                        +254 715 607 720
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 p-3 bg-gray-900 rounded-lg">
@@ -300,7 +372,9 @@ const Order = () => {
                     </div>
                     <div>
                       <div className="text-white font-semibold">Email Us</div>
-                      <div className="text-gray-300 text-sm">info@blazebriquettes.co.ke</div>
+                      <div className="text-gray-300 text-sm">
+                        info@blazebriquettes.co.ke
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -308,11 +382,15 @@ const Order = () => {
 
               {/* Features */}
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-700">
-                <h3 className="text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Why Choose Us?
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">100% Quality Guarantee</span>
+                    <span className="text-gray-300">
+                      100% Quality Guarantee
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
@@ -320,7 +398,9 @@ const Order = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">Made from Recycled Materials</span>
+                    <span className="text-gray-300">
+                      Made from Recycled Materials
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />

@@ -30,16 +30,16 @@ const Footer = () => {
                   Powering Kenya's sustainable future, one fire at a time.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="https://www.facebook.com/people/BLAZE-Charcoal/61578335618851/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform">
+                  <a href="https://www.facebook.com/people/BLAZE-Charcoal/61578335618851/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform" aria-label="Follow us on Facebook">
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a href="https://www.twitter.com/blazebriquettes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform">
+                  <a href="https://www.twitter.com/blazebriquettes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform" aria-label="Follow us on Twitter">
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a href="https://www.instagram.com/blazebriquettes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform">
+                  <a href="https://www.instagram.com/blazebriquettes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform" aria-label="Follow us on Instagram">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="https://www.linkedin.com/company/blazebriquettes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform">
+                  <a href="https://www.linkedin.com/company/blazebriquettes" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200 hover:scale-110 transform" aria-label="Follow us on LinkedIn">
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
